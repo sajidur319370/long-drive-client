@@ -1,11 +1,6 @@
+import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import "./App.css";
-import AddReview from "./Components/Dashboard/AddReview/AddReview";
-import DashboardMain from "./Components/Dashboard/DashboardMain/DashboardMain";
-import MyOrders from "./Components/Dashboard/MyOrders/MyOrders";
-import MyProfile from "./Components/Dashboard/MyProfile/MyProfile";
-import Users from "./Components/Dashboard/Users/Users";
 import Home from "./Components/Pages/Home/Home/Home";
 import Reviews from "./Components/Pages/Home/Reviews/Reviews";
 import Tools from "./Components/Pages/Home/Tools/Tools";
@@ -16,6 +11,11 @@ import PurchasePage from "./Components/Pages/PurchasePage/PurchasePage";
 import Footer from "./Components/Pages/Shared/Footer/Footer";
 import Navbar from "./Components/Pages/Shared/Navbar/Navbar";
 import NotFound from "./Components/Pages/Shared/NotFound/NotFound";
+import DashboardMain from "./Components/Pages/Dashboard/DashboardMain/DashboardMain";
+import MyProfile from "./Components/Pages/Dashboard/MyProfile/MyProfile";
+import MyOrders from "./Components/Pages/Dashboard/MyOrders/MyOrders";
+import AddReview from "./Components/Pages/Dashboard/AddReview/AddReview";
+import Users from "./Components/Pages/Dashboard/Users/Users";
 
 function App() {
   return (

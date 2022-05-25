@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "name": "Crystal Blue with Machined Face",
+        "image": "https://i.ibb.co/hVGGQjf/crystal-blue.jpg",
+        "description": [
+            "Factory original quality for less.",
+            "Direct replacement.",
+            "Installation is identical to factory unit.",
+            "No vehicle modifications required."
+        ],
+        "available_quantity": 32,
+        "order_quantity": 17,
+        "price": 68
+    },
+    {
+        "id": 2,
+        "name": "Racing Equipment",
+        "image": "https://i.ibb.co/5x5ynH4/racing-equipment.jpg",
+        "description": [
+            "Factory original quality for less.",
+            "Direct replacement.",
+            "Installation is identical to factory unit.",
+            "No vehicle modifications required."
+        ],
+        "available_quantity": 40,
+        "order_quantity": 20,
+        "price": 51
+    },
+    {
+        "id": 3,
+        "name": "Imola Series Drilled and Slotted Brake",
+        "image": "https://i.ibb.co/kMkhfQZ/imola-series-brake-kit.jpg",
+        "description": [
+            "Factory original quality for less.",
+            "Direct replacement.",
+            "Installation is identical to factory unit.",
+            "No vehicle modifications required."
+        ],
+        "available_quantity": 36,
+        "order_quantity": 16,
+        "price": 54
+    },
+    {
+        "id": 4,
+        "name": "Projector LED Fog Lights",
+        "image": "https://i.ibb.co/NZMxtqd/projector-led-foglite.jpg",
+        "description": [
+            "Factory original quality for less.",
+            "Direct replacement.",
+            "Installation is identical to factory unit.",
+            "No vehicle modifications required."
+        ],
+        "available_quantity": 33,
+        "order_quantity": 24,
+        "price": 77
+    },
+    {
+        "id": 5,
+        "name": "Halogen Side Lightling",
+        "image": "https://i.ibb.co/GPqfCKG/replacement-headlight.jpg",
+        "description": [
+            "Factory original quality for less.",
+            "Direct replacement.",
+            "Installation is identical to factory unit.",
+            "No vehicle modifications required."
+        ],
+        "available_quantity": 37,
+        "order_quantity": 25,
+        "price": 76
+    },
+    {
+        "id": 6,
+        "name": "Lowering Kits",
+        "image": "https://i.ibb.co/8NJxbS3/lowering-kits.jpg",
+        "description": [
+            "Factory original quality for less.",
+            "Direct replacement.",
+            "Installation is identical to factory unit.",
+            "No vehicle modifications required."
+        ],
+        "available_quantity": 35,
+        "order_quantity": 18,
+        "price": 69
+    }
+]

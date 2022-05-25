@@ -10,6 +10,7 @@ import Home from "./Components/Pages/Home/Home/Home";
 import Reviews from "./Components/Pages/Home/Reviews/Reviews";
 import Tools from "./Components/Pages/Home/Tools/Tools";
 import Login from "./Components/Pages/Login/Login/Login";
+import RequireAuth from "./Components/Pages/Login/RequireAuth/RequireAuth";
 import SignUp from "./Components/Pages/Login/SignUp/SignUp";
 import PurchasePage from "./Components/Pages/PurchasePage/PurchasePage";
 import Footer from "./Components/Pages/Shared/Footer/Footer";
@@ -30,7 +31,7 @@ function App() {
           <Route path="addReview" element={<AddReview></AddReview>}></Route>
           <Route path="users" element={<Users></Users>}></Route>
         </Route>
-        <Route path="/purchase/:id" element={<PurchasePage></PurchasePage>}></Route>
+        <Route path="/purchase/:id" element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

@@ -28,7 +28,7 @@ const Navbar = () => {
         }
         <li className="text-md font-medium">
             {
-                user ? <button onClick={logOut} className="btn btn-secondary text-white">Logout</button> : <Link to="/login">Login</Link>
+                user ? <button onClick={logOut} className="btn btn-secondary bg-gradient-to-r from-primary to-secondary text-white">Logout</button> : <Link to="/login">Login</Link>
             }
 
         </li>

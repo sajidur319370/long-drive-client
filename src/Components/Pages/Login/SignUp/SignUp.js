@@ -1,47 +1,71 @@
 import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
-const Login = () => {
-    const navigate = useNavigate();
-
+const SignUp = () => {
+    const navigate = useNavigate()
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => {
-        signInWithEmailAndPassword(data.email, data.password)
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
+        toast.success('Updated profile');
+
     }
     useEffect(() => {
         if (user) {
             console.log(user);
             navigate("/");
         }
-
     }, [navigate, user])
 
-    if (loading) {
+
+    if (loading || updating) {
         return <Loading></Loading>
     }
     let errorMaessage;
-    if (error) {
+    if (error || updateError) {
         errorMaessage = <p className='text-red-500'>{error?.message}</p>
     }
     return (
         <div>
-            <h2 className="text-3xl text-indigo-500 text-center font-bold py-2">Login</h2>
+            <h2 className="text-3xl text-indigo-500 text-center font-bold py-2">SignUp</h2>
             <div className='flex justify-center items-center h-screen my-40'>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
-                        <h2 className="text-center text-4xl">Login</h2>
+                        <h2 className="text-center text-4xl">Sign Up</h2>
                         <form onSubmit={handleSubmit(onSubmit)} className="text-center">
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input
+                                    {...register("name", {
+                                        required: {
+                                            value: true,
+                                            message: "Name is Required"
+                                        },
+
+                                    })}
+                                    type="Text"
+                                    placeholder="Type Your Name"
+                                    className="input input-bordered w-full max-w-xs"
+                                />
+                                <label className="label">
+                                    {errors.name?.type === 'required' && <span className="label-text-alt  text-red-500">{errors.name.message}</span>}
+                                </label>
+                            </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -90,12 +114,12 @@ const Login = () => {
                                     {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                                 </label>
                             </div>
-                            <input className='btn btn-primary bg-gradient-to-r from-primary to-secondary uppercase text-white font-bold my-2' type="submit" value='Login' />
+                            <input className='btn btn-primary bg-gradient-to-r from-primary to-secondary uppercase text-white font-bold my-2' type="submit" value='Sign Up' />
                         </form>
                         {
                             errorMaessage
                         }
-                        <p className='text-center my-2'>New to Long Drive? <Link className='text-secondary' to="/signup">Create new account</Link></p>
+                        <p className='text-center my-2'>Already have an account? <Link className='text-secondary' to="/login">Please Login</Link></p>
 
                         <div className="divider">OR</div>
                         <SocialLogin></SocialLogin>
@@ -103,9 +127,8 @@ const Login = () => {
                 </div>
 
             </div>
-
         </div>
     );
 };
 
-export default Login;
+export default SignUp;

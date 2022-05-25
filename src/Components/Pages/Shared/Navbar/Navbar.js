@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { signOut } from "firebase/auth";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const logOut = () => {
+        signOut(auth);
+        localStorage.removeItem('accessToken');
+    };
     const menuItems = <>
         <li className="text-md font-medium">
             <Link to="/">Home</Link>
@@ -15,8 +23,14 @@ const Navbar = () => {
         <li className="text-md font-medium">
             <Link to="/contact">Contact</Link>
         </li>
+        {
+            user && (<li className="text-md font-medium"><Link to="/dashboard">Dashboard</Link></li>)
+        }
         <li className="text-md font-medium">
-            <Link to="/Login">Login</Link>
+            {
+                user ? <button onClick={logOut} className="btn btn-secondary text-white">Logout</button> : <Link to="/login">Login</Link>
+            }
+
         </li>
     </>;
     return (
@@ -38,7 +52,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <label tabIndex="1" htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden">
+                <label tabIndex="1" htmlFor="dashboard-drawer" className="btn btn-ghost lg:hidden">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"

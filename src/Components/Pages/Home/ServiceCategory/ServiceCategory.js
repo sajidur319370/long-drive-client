@@ -4,7 +4,7 @@ import ServiceRow from './ServiceRow';
 const ServiceCategory = () => {
     const services = [
         {
-            id: 1,
+            _id: 1,
             title: 'Lights',
             image: 'https://i.ibb.co/34DmS8m/light.jpg'
 
@@ -12,13 +12,13 @@ const ServiceCategory = () => {
 
         },
         {
-            id: 2,
+            _id: 2,
             title: 'Wheels',
             image: 'https://i.ibb.co/Y8sS2GF/wheel.jpg'
 
         },
         {
-            id: 3,
+            _id: 3,
             title: 'Tires',
             image: ' https://i.ibb.co/gztwLkj/tire.jpg'
 
@@ -29,7 +29,7 @@ const ServiceCategory = () => {
             <h2 className="text-3xl text-indigo-500 text-center font-bold py-2">Tools Category</h2>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 container-lg">
                 {services?.map((service) => (
-                    <ServiceRow key={service.id} service={service}></ServiceRow>
+                    <ServiceRow key={service._id} service={service}></ServiceRow>
                 ))}
             </div>
         </div>

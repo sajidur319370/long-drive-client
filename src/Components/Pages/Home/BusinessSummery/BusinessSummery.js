@@ -1,12 +1,8 @@
 import {
-    ChartPieIcon,
-    ChevronDoubleUpIcon,
-    ChipIcon,
     CogIcon,
     EmojiHappyIcon,
     HandIcon,
     LocationMarkerIcon,
-    TruckIcon,
 } from "@heroicons/react/solid";
 import React from "react";
 

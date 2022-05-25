@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ToolsRow = ({ tool }) => {
-    const { name, image, price, description, available_quantity, order_quantity } = tool;
+    const { _id, name, image, price, description, available_quantity, order_quantity } = tool;
+    const navigate = useNavigate()
     return (
         <div className="text-center rounded-3xl">
             <div className="rounded-2xl bg-base-100 shadow-xl">
@@ -19,7 +21,9 @@ const ToolsRow = ({ tool }) => {
 
                     </div>
                     <div className="py-10">
-                        <button className="btn bg-orange-600 border-0">Buy Now</button>
+                        <button onClick={() => {
+                            navigate(`/purchase/${_id}`);
+                        }} className="btn bg-orange-600 border-0">Buy Now</button>
                     </div>
                 </div>
             </div>

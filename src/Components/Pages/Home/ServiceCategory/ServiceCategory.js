@@ -29,7 +29,7 @@ const ServiceCategory = () => {
             <h2 className="text-3xl text-indigo-500 text-center font-bold py-2">Tools Category</h2>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 container-lg">
                 {services?.map((service) => (
-                    <ServiceRow key={service._id} service={service}></ServiceRow>
+                    <ServiceRow key={service.id} service={service}></ServiceRow>
                 ))}
             </div>
         </div>

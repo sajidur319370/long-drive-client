@@ -13,11 +13,15 @@ const Tools = () => {
     }
 
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 container-lg">
-            {tools?.map((tool) => (
-                <ToolsRow key={tool._id} tool={tool}></ToolsRow>
-            ))}
+        <div className="my-20">
+            <h2 className="text-3xl text-indigo-500 text-center font-bold py-2">All Tools</h2>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 container-lg">
+                {tools?.map((tool) => (
+                    <ToolsRow key={tool._id} tool={tool}></ToolsRow>
+                ))}
+            </div>
         </div>
+
     );
 };
 

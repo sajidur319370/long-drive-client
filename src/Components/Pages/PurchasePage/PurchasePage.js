@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Loading from "../Shared/Loading/Loading";
+import PurchaseModal from "./PurchaseModal";
 
 const PurchasePage = () => {
     const { id } = useParams();
@@ -11,6 +12,7 @@ const PurchasePage = () => {
     if (isLoading) {
         <Loading></Loading>;
     }
+    const [purchaseTool, setPurchaseTool] = useState(null);
     return (
         <div className="container-lg">
             <h2 className="text-3xl text-indigo-500 text-center font-bold py-2">
@@ -40,7 +42,12 @@ const PurchasePage = () => {
                         ))}
                     </div>
                     <div className="">
-                        <button className="btn bg-orange-600 border-0">Buy Now</button>
+                        <label onClick={() => setPurchaseTool(tool)} htmlFor="my-modal-6" className="btn modal-button bg-orange-600 border-0">
+                            Purchase Now
+                        </label>
+                        {
+                            purchaseTool && <PurchaseModal purchaseTool={purchaseTool}></PurchaseModal>
+                        }
                     </div>
                 </div>
             </div>

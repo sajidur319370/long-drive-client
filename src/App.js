@@ -17,6 +17,9 @@ import MyProfile from "./Components/Pages/Dashboard/MyProfile/MyProfile";
 import MyOrders from "./Components/Pages/Dashboard/MyOrders/MyOrders";
 import AddReview from "./Components/Pages/Dashboard/AddReview/AddReview";
 import Users from "./Components/Pages/Dashboard/Users/Users";
+import Contact from "./Components/Pages/Home/Contact/Contact";
+import Blog from "./Components/Pages/Blog/Blog";
+import Portfolio from "./Components/Pages/Portfolio/Portfolio";
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
           <Route path="users" element={<Users></Users>}></Route>
         </Route>
         <Route path="/purchase/:id" element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
+        <Route path="/contact" element={<Contact></Contact>}></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
+        <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

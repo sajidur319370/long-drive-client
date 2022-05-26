@@ -1,6 +1,6 @@
 # Getting Started with Long-Drive
 
-#### `Site-link`: https://long-drive-c3e7e.web.app
+#### `Site-link`: https://long-drive-c3e7e.firebaseapp.com/
 
 ### In the project directory,I have used:
 

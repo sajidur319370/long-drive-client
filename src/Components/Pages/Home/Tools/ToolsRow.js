@@ -23,7 +23,7 @@ const ToolsRow = ({ tool }) => {
                     <div className="py-10">
                         <button onClick={() => {
                             navigate(`/purchase/${_id}`);
-                        }} className="btn bg-orange-600 border-0">Book Now</button>
+                        }} className="btn bg-orange-600 border-0">Order Now</button>
                     </div>
                 </div>
             </div>

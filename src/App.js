@@ -1,6 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Home from "./Components/Pages/Home/Home/Home";
 import Reviews from "./Components/Pages/Home/Reviews/Reviews";
 import Tools from "./Components/Pages/Home/Tools/Tools";

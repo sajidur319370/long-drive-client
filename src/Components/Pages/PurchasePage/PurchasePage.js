@@ -43,7 +43,7 @@ const PurchasePage = () => {
                     </div>
                     <div className="">
                         <label onClick={() => setPurchaseTool(tool)} htmlFor="my-modal-6" className="btn modal-button bg-orange-600 border-0">
-                            Purchase Now
+                            Order Now
                         </label>
                         {
                             purchaseTool && <PurchaseModal purchaseTool={purchaseTool}></PurchaseModal>

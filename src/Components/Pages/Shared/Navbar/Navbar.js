@@ -37,7 +37,7 @@ const Navbar = () => {
             )}
             <li className="text-md font-medium">
                 {user && (
-                    <p className="bg-emerald-400 mx-2 text-gray-800">{user.displayName}</p>
+                    <p className="bg-emerald-400 mx-2 text-gray-800">{user?.displayName}</p>
                 )}
                 {user ? (
                     <button

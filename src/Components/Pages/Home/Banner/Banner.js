@@ -15,10 +15,10 @@ const Banner = () => {
                         <p className="text-white lg:text-4xl md:text-lg font-medium text-xs" >Stay Happy With Long Drive</p>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">
+                        <a href="#slide2" className="btn btn-circle">
                             <ChevronLeftIcon></ChevronLeftIcon>
                         </a>
-                        <a href="#slide2" className="btn btn-circle">
+                        <a href="#slide1" className="btn btn-circle">
                             <ChevronRightIcon></ChevronRightIcon>
                         </a>
                     </div>
@@ -31,10 +31,10 @@ const Banner = () => {
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
 
-                        <a href="#slide1" className="btn btn-circle">
+                        <a href="#slide3" className="btn btn-circle">
                             <ChevronLeftIcon></ChevronLeftIcon>
                         </a>
-                        <a href="#slide3" className="btn btn-circle">
+                        <a href="#slide1" className="btn btn-circle">
                             <ChevronRightIcon></ChevronRightIcon>
                         </a>
                     </div>
@@ -46,10 +46,10 @@ const Banner = () => {
                         <p className="text-white lg:text-4xl md:text-lg font-medium text-xs" >Stay Happy With Long Drive</p>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">
+                        <a href="#slide3" className="btn btn-circle">
                             <ChevronLeftIcon></ChevronLeftIcon>
                         </a>
-                        <a href="#slide3" className="btn btn-circle">
+                        <a href="#slide2" className="btn btn-circle">
                             <ChevronRightIcon></ChevronRightIcon>
                         </a>
                     </div>

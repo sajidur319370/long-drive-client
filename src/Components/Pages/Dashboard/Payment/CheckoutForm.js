@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const CheckoutForm = ({ orderTool }) => {
     const stripe = useStripe();
@@ -69,6 +70,7 @@ const CheckoutForm = ({ orderTool }) => {
             setCardError("");
             setTransactionId(paymentIntent.id);
             console.log(paymentIntent);
+            toast.success("Payment Sent!");
             setSuccess("Congrats! Your payment is completed.");
             // =====Store payment on database========
             const payment = {
@@ -108,8 +110,7 @@ const CheckoutForm = ({ orderTool }) => {
                 <div>
                     <p className="text-green-500 text-base font-medium">{success}</p>
                     <p className=" text-base font-medium">
-                        Your transaction id:{" "}
-                        <span className="text-orange-700">{transactionId}</span>
+                        {transactionId && <p> Your Transaction id: <span className="text-orange-700">{transactionId}</span></p>}
                     </p>
                 </div>
             )}

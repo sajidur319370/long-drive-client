@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ToolsRow = ({ tool }) => {
     const { _id, name, image, price, description, available_quantity, minimum_order_quantity } = tool;
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     return (
         <div className="text-center rounded-3xl">
             <div className="rounded-2xl bg-base-100 shadow-xl">

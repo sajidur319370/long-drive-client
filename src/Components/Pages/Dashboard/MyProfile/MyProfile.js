@@ -13,16 +13,25 @@ const MyProfile = () => {
     const onSubmit = (data) => console.log(data);
     return (
         <div>
-            <h2 className="text-3xl text-indigo-500 text-center font-bold py-2">My Profile</h2>
-            <div className="avatar">
-                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img src={user?.photoURL} alt="" />
+            <h2 className="text-3xl text-indigo-500 font-bold py-2">My Profile</h2>
+            <div className='lg:flex items-center shadow-lg flex-col'>
+                <div className='flex justify-center items-center'>
+                    <div className="avatar">
+                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                            <img src={user?.photoURL} alt="" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="">
+                    <h3 className="text-xl text-rose-900 text-center font-bold py-2">{user?.displayName}</h3>
+                    <h3 className="text-sm text-indigo-900 text-center font-base">{user?.email}</h3>
                 </div>
             </div>
-            <h3 className="text-xl text-rose-900 text-center font-bold py-2">{user?.displayName}</h3>
-            <h3 className="text-sm text-indigo-900 text-center font-base">{user?.email}</h3>
-            <div className='flex justify-center items-center my-10'>
-                <form onSubmit={handleSubmit(onSubmit)} className="text-center shadow-xl rounded-lg p-5">
+
+            <div className=''>
+                <form onSubmit={handleSubmit(onSubmit)} className="shadow-xl rounded-lg p-5">
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Education</span>
@@ -124,11 +133,13 @@ const MyProfile = () => {
                             )}
                         </label>
                     </div>
-                    <input
-                        className="btn btn-primary border-0 bg-lime-500 uppercase text-white font-bold my-2"
-                        type="submit"
-                        value="Update"
-                    />
+                    <div className="form-control w-full max-w-xs">
+                        <input
+                            className="btn btn-primary border-0 bg-lime-500 uppercase text-white font-bold my-2"
+                            type="submit"
+                            value="Update"
+                        />
+                    </div>
                 </form>
             </div>
         </div>

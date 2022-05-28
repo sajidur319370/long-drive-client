@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const CheckoutForm = ({ orderTool }) => {
@@ -10,6 +11,7 @@ const CheckoutForm = ({ orderTool }) => {
     const [success, setSuccess] = useState("");
     const [transactionId, setTransactionId] = useState("");
     const [processing, setProcessing] = useState(false);
+    const navigate = useNavigate();
 
     const { _id, price, orderQuantity, userName, userEmail } = orderTool;
 
@@ -72,6 +74,7 @@ const CheckoutForm = ({ orderTool }) => {
             console.log(paymentIntent);
             toast.success("Payment Sent!");
             setSuccess("Congrats! Your payment is completed.");
+
             // =====Store payment on database========
             const payment = {
                 orderId: _id,
@@ -88,8 +91,11 @@ const CheckoutForm = ({ orderTool }) => {
             }).then(res => res.json).then(data => {
                 setProcessing(false)
                 console.log(data);
+                navigate("/dashboard/myOrders");
             })
         }
+
+
     };
     return (
         <div>
@@ -103,17 +109,20 @@ const CheckoutForm = ({ orderTool }) => {
                     Pay
                 </button>
             </form>
-            {cardError && (
-                <p className="text-red-500 text-base font-medium">{cardError}</p>
-            )}
-            {success && (
-                <div>
+            <div>
+                {cardError && (
+                    <p className="text-red-500 text-base font-medium">{cardError}</p>
+                )}
+                {success && (
                     <p className="text-green-500 text-base font-medium">{success}</p>
+                )}
+                {success && (
                     <p className=" text-base font-medium">
                         {transactionId && <p> Your Transaction id: <span className="text-orange-700">{transactionId}</span></p>}
                     </p>
-                </div>
-            )}
+                )}
+            </div>
+
         </div>
     );
 };

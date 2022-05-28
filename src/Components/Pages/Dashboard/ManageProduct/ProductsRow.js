@@ -17,7 +17,7 @@ const ProductsRow = ({ product, setDeletingProduct }) => {
                         <p className='text-sm font-medium pt-5 text-green-600'>Order Quantity: {minimum_order_quantity}</p>
 
                         <div className="py-5">
-                            {description.map((d, index) => <li key={index}>{d}</li>)}
+                            {description.map((d, index) => <li className='list-none' key={index}>{d}</li>)}
 
                         </div>
                         <div className="py-5">

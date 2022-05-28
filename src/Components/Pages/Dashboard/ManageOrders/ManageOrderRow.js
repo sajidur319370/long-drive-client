@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const OrderCard = ({ order, setDeletingOrder }) => {
-    const { _id, orderId, orderName, price, orderQuantity, status, paid } = order
+
+const ManageOrderRow = ({ order, setDeletingOrder }) => {
+    const { orderId, orderName, price, orderQuantity, status, paid } = order
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
@@ -12,14 +12,16 @@ const OrderCard = ({ order, setDeletingOrder }) => {
                     <p className='text-sm font-semibold text-slate-600'>Price: <span className='bg-yellow-200 p-1'>{price}</span></p>
                     <p className='text-sm font-semibold text-slate-600'>Quantity: <span className='bg-yellow-200 p-1'>{orderQuantity}</span></p>
                     <p className='text-sm font-semibold text-slate-600'>Total Price: <span className='bg-yellow-200 p-1'>${parseFloat(orderQuantity) * price}.00</span></p>
+                    <p className='text-sm font-semibold text-slate-600'>Status: <span className='bg-yellow-200 p-1'>{status ? status : "unpaid"}</span></p>
                     <div className="card-actions justify-end">
-                        {!paid && <Link to={`/dashboard/payment/${_id}`}><button className="btn btn-primary">Pay Now</button></Link>
-                        }{
-                            !paid && <label htmlFor="delete-modal" onClick={() => setDeletingOrder(order)} className="btn modal-button btn-error">Delete</label>
-                        }
+
+                        {!paid && <span className="p-3 bg-amber-400 rounded-md">Unpaid</span>}
                         {
-                            paid && <span className="p-3 bg-emerald-500 text-white rounded-md">Paid</span>
+                            !paid && <label htmlFor="delete-manage" onClick={() => setDeletingOrder(order)} className="btn modal-button btn-active">Delete</label>
                         }
+
+                        {paid && <span className="p-3 bg-emerald-500 rounded-md">Paid</span>}
+                        {paid && <button className="btn btn-secondary">Update Status</button>}
 
                     </div>
                 </div>
@@ -29,4 +31,4 @@ const OrderCard = ({ order, setDeletingOrder }) => {
     );
 };
 
-export default OrderCard;
+export default ManageOrderRow;

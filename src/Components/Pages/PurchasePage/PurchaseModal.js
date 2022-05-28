@@ -1,10 +1,12 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../firebase.init";
 
-const PurchaseModal = ({ purchaseTool }) => {
+const PurchaseModal = ({ purchaseTool, setPurchaseTool }) => {
+    const navigate = useNavigate();
     const [user] = useAuthState(auth);
     const { _id, name, price, available_quantity, minimum_order_quantity } =
         purchaseTool;
@@ -34,9 +36,10 @@ const PurchaseModal = ({ purchaseTool }) => {
             .then(res => res.json())
             .then(orderData => {
                 console.log(orderData);
-                toast.success("Order added successsfully!")
+                toast.success("Order added successsfully!");
+                setPurchaseTool(null);
             })
-
+        navigate('/');
     };
 
 

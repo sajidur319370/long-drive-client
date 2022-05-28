@@ -12,7 +12,6 @@ const MyProfile = () => {
     const [updtingProfile, setUpdatingProfile] = useState(null);
     const { data: profile, isLaoding, refetch } = useQuery(['profile', user], () => fetch(`http://localhost:5000/profile/${user?.email}`, {
         headers: {
-            'content-type': 'application/json',
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));

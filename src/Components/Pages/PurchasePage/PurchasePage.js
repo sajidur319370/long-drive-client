@@ -7,7 +7,11 @@ import PurchaseModal from "./PurchaseModal";
 const PurchasePage = () => {
     const { id } = useParams();
     const { data: tool, isLoading, } = useQuery("tool", () =>
-        fetch(`http://localhost:5000/purchase/${id}`).then((res) => res.json())
+        fetch(`http://localhost:5000/purchase/${id}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then((res) => res.json())
     );
     if (isLoading) {
         <Loading></Loading>;
@@ -37,7 +41,7 @@ const PurchasePage = () => {
                     </p>
 
                     <div className="p-5 text-left">
-                        {tool?.description.map((d, index) => (
+                        {tool?.description?.map((d, index) => (
                             <li className="list-none" key={index}>{d}</li>
                         ))}
                     </div>

@@ -16,7 +16,6 @@ const PurchaseModal = ({ purchaseTool, setPurchaseTool }) => {
         handleSubmit,
     } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
         const order = {
             orderId: _id,
             orderName: name,
@@ -30,12 +29,12 @@ const PurchaseModal = ({ purchaseTool, setPurchaseTool }) => {
             method: "POST",
             headers: {
                 "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(order),
         })
             .then(res => res.json())
             .then(orderData => {
-                console.log(orderData);
                 toast.success("Order added successsfully!");
                 setPurchaseTool(null);
             })

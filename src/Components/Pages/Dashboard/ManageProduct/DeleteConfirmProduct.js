@@ -12,7 +12,6 @@ const DeleteConfirmProduct = ({ deletingProduct, setDeletingProduct, refetch }) 
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.deletedCount) {
                     toast.success(`Tool ${name} is deleted!!`);
                     setDeletingProduct(null);

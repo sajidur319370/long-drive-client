@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
@@ -113,6 +113,10 @@ const AddProduct = () => {
                                     value: true,
                                     message: "Please input the price of the product?",
                                 },
+                                min: {
+                                    value: 1,
+                                    message: "Price must be greater than 0.",
+                                },
                             })}
                             type="number"
                             placeholder="Price"
@@ -120,6 +124,11 @@ const AddProduct = () => {
                         />
                         <label className="label">
                             {errors.price?.type === "required" && (
+                                <span className="label-text-alt  text-red-500">
+                                    {errors.price.message}
+                                </span>
+                            )}
+                            {errors.price?.type === "min" && (
                                 <span className="label-text-alt  text-red-500">
                                     {errors.price.message}
                                 </span>
@@ -138,13 +147,8 @@ const AddProduct = () => {
                                     message: "Please input the available quantity of the product?",
                                 },
                                 min: {
-                                    value: 1,
-                                    message: "Available quantity must be 1 or up.",
-                                },
-
-                                max: {
-                                    value: 50,
-                                    message: "Available quantity must be less than  50.",
+                                    value: 20,
+                                    message: "Available quantity must be 20  or  greater than 20.",
                                 },
                             })}
                             type="number"
@@ -158,11 +162,6 @@ const AddProduct = () => {
                                 </span>
                             )}
                             {errors.availableQuantity?.type === "min" && (
-                                <span className="label-text-alt text-red-500">
-                                    {errors.availableQuantity.message}
-                                </span>
-                            )}
-                            {errors.availableQuantity?.type === "max" && (
                                 <span className="label-text-alt text-red-500">
                                     {errors.availableQuantity.message}
                                 </span>
@@ -182,12 +181,12 @@ const AddProduct = () => {
                                 },
                                 min: {
                                     value: 1,
-                                    message: "Minimum order quantity must be 1 or up.",
+                                    message: "Minimum order quantity must be 1 or greater than 1.",
                                 },
 
                                 max: {
-                                    value: 50,
-                                    message: "Maximum order quantity must be less than  50.",
+                                    value: 20,
+                                    message: "Maximum order quantity must be 20 or less than  20.",
                                 },
                             })}
                             type="number"
@@ -235,7 +234,7 @@ const AddProduct = () => {
                         <input className='btn btn-primary bg-gradient-to-r from-primary to-secondary uppercase text-white font-bold my-2' type="submit" value='Add' />
                     </div>
                 </form >
-
+                <span className="font-light text-red-500">Wait a moment to be stocked item............</span>
             </div >
         </div>
     );

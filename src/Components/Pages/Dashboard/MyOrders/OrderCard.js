@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const OrderCard = ({ order, setDeletingOrder }) => {
-    const { _id, orderId, orderName, price, orderQuantity, status, paid } = order
+    const { _id, orderId, orderName, price, orderQuantity, paid } = order
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">

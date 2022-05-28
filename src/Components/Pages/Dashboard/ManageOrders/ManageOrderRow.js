@@ -1,8 +1,25 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 
-const ManageOrderRow = ({ order, setDeletingOrder }) => {
-    const { orderId, orderName, price, orderQuantity, status, paid } = order
+const ManageOrderRow = ({ order, setDeletingOrder, refetch }) => {
+    const { _id, orderId, orderName, price, orderQuantity, status, paid } = order;
+    const handleUpdate = () => {
+        // send data to server
+        const url = `http://localhost:5000/manage/${_id}`;
+        fetch(url, {
+            method: "PUT",
+            headers: {
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                console.log(result);
+                toast.success("Order Shipped!!");
+                refetch();
+            });
+    };
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
@@ -21,7 +38,8 @@ const ManageOrderRow = ({ order, setDeletingOrder }) => {
                         }
 
                         {paid && <span className="p-3 bg-emerald-500 rounded-md">Paid</span>}
-                        {paid && <button className="btn btn-secondary">Update Status</button>}
+                        {(status === 'pending') && <button onClick={() => handleUpdate()} className="btn btn-secondary">Ship</button>}
+                        {(status === 'shipped') && <button onClick={() => handleUpdate()} className="btn btn-info">Shipped</button>}
 
                     </div>
                 </div>

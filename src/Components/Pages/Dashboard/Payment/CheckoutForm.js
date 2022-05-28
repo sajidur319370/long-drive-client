@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Loading from '../../Shared/Loading/Loading';
 
 const CheckoutForm = ({ orderTool }) => {
     const stripe = useStripe();
@@ -97,6 +98,9 @@ const CheckoutForm = ({ orderTool }) => {
 
 
     };
+    if (processing) {
+        <Loading></Loading>
+    }
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -122,8 +126,8 @@ const CheckoutForm = ({ orderTool }) => {
                     </p>
                 )}
             </div>
-
         </div>
+
     );
 };
 

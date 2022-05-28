@@ -33,7 +33,7 @@ const MyOrders = () => {
             <h2 className="text-3xl text-indigo-500 text-center font-bold py-2">My orders({orders?.length})</h2>
             <div className='container grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2'>
                 {
-                    orders?.map(order => <OrderCard key={order._id} order={order} refetch={refetch} setDeletingOrder={setDeletingOrder}></OrderCard>)
+                    orders?.map(order => <OrderCard key={order._id} order={order} setDeletingOrder={setDeletingOrder}></OrderCard>)
                 }
             </div>
             {

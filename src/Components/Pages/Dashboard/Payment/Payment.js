@@ -41,7 +41,9 @@ const Payment = () => {
                             <CheckoutForm orderTool={orderTool} />
                         </Elements>
                     </div>
+                    <p className="font-bold text-center text-rose-500 py-5">Wait a moment for payment completion.....</p>
                 </div>
+
             </div>
         </div>
     );

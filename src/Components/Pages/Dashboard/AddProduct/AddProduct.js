@@ -21,7 +21,6 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log("imageBB Result:", result);
                 if (result.success) {
                     const image = result.data.url;
                     const product = {

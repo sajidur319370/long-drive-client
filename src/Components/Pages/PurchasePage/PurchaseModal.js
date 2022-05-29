@@ -25,7 +25,7 @@ const PurchaseModal = ({ purchaseTool, setPurchaseTool }) => {
             userEmail: data.email,
             phone: data.phone,
         }
-        fetch("http://localhost:5000/order", {
+        fetch("https://hidden-bastion-67340.herokuapp.com/order", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

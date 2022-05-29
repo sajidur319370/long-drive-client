@@ -5,7 +5,7 @@ import ToolsRow from "./ToolsRow";
 
 const Tools = () => {
     const { data: tools, isLoading } = useQuery("tools", () =>
-        fetch("http://localhost:5000/tool").then((res) => res.json())
+        fetch("https://hidden-bastion-67340.herokuapp.com/tool").then((res) => res.json())
     );
 
     if (isLoading) {

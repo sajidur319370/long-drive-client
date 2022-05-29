@@ -5,7 +5,7 @@ import ReviewCard from './ReviewCard';
 
 const Reviews = () => {
     const { data: reviews, isLoading } = useQuery("reviews", () =>
-        fetch("http://localhost:5000/review").then((res) => res.json())
+        fetch("https://hidden-bastion-67340.herokuapp.com/review").then((res) => res.json())
     );
     if (isLoading) {
         <Loading></Loading>

@@ -6,7 +6,7 @@ const ManageOrderRow = ({ order, setDeletingOrder, refetch }) => {
     const { _id, orderId, orderName, price, orderQuantity, status, paid } = order;
     const handleUpdate = () => {
         // send data to server
-        const url = `http://localhost:5000/manage/${_id}`;
+        const url = `https://hidden-bastion-67340.herokuapp.com/manage/${_id}`;
         fetch(url, {
             method: "PUT",
             headers: {

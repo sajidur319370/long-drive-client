@@ -10,7 +10,7 @@ import ProfileUpdateModal from './ProfileUpdateModal';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     const [updtingProfile, setUpdatingProfile] = useState(null);
-    const { data: profile, isLaoding, refetch } = useQuery("profile", () => fetch(`http://localhost:5000/profile/${user?.email}`, {
+    const { data: profile, isLaoding, refetch } = useQuery("profile", () => fetch(`https://hidden-bastion-67340.herokuapp.com/profile/${user?.email}`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

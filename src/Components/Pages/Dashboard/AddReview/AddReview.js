@@ -15,7 +15,7 @@ const AddReview = () => {
             ratings: data.ratings
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://hidden-bastion-67340.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

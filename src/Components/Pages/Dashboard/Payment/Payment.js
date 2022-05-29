@@ -14,7 +14,7 @@ const Payment = () => {
     const [stripePromise, setStripePromise] = useState(() => loadStripe(PUBLISHABLE_KEY));
     const [user] = useAuthState(auth);
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://hidden-bastion-67340.herokuapp.com/order/${id}`;
 
     const { data: orderTool, isLoading } = useQuery(["order", id], () =>
         fetch(url, {

@@ -7,7 +7,7 @@ import ProductsRow from './ProductsRow';
 const ProductsAll = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
     const { data: products, isLoading, refetch } = useQuery("products", () =>
-        fetch("http://localhost:5000/tool", {
+        fetch("https://hidden-bastion-67340.herokuapp.com/tool", {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -7,7 +7,7 @@ import ManageOrderRow from './ManageOrderRow';
 const ManageOrders = () => {
 
     const [deletingOrder, setDeletingOrder] = useState(null);
-    const { data: orders, isLaoding, refetch } = useQuery('orders', () => fetch("http://localhost:5000/manage", {
+    const { data: orders, isLaoding, refetch } = useQuery('orders', () => fetch("https://hidden-bastion-67340.herokuapp.com/manage", {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

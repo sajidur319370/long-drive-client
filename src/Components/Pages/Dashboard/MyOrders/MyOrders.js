@@ -12,7 +12,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
     const [deletingOrder, setDeletingOrder] = useState(null);
-    const { data: orders, isLaoding, refetch } = useQuery(['orders', user], () => fetch(`http://localhost:5000/order?userEmail=${user?.email}`, {
+    const { data: orders, isLaoding, refetch } = useQuery(['orders', user], () => fetch(`https://hidden-bastion-67340.herokuapp.com/order?userEmail=${user?.email}`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

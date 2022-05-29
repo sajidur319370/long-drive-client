@@ -33,7 +33,7 @@ const AddProduct = () => {
 
                     }
                     // send to Your database
-                    fetch('http://localhost:5000/tool', {
+                    fetch('https://hidden-bastion-67340.herokuapp.com/tool', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

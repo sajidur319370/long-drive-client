@@ -7,7 +7,7 @@ import useAdmin from '../../../../hooks/useAdmin';
 const UserRow = ({ user, refetch }) => {
     const { photoURL, displayName, email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://hidden-bastion-67340.herokuapp.com/user/admin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,

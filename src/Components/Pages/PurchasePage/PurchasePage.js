@@ -7,7 +7,7 @@ import PurchaseModal from "./PurchaseModal";
 const PurchasePage = () => {
     const { id } = useParams();
     const { data: tool, isLoading, } = useQuery("tool", () =>
-        fetch(`http://localhost:5000/purchase/${id}`, {
+        fetch(`https://hidden-bastion-67340.herokuapp.com/purchase/${id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }

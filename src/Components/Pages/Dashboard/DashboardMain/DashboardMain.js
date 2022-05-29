@@ -29,9 +29,6 @@ const DashboardMain = () => {
                             <li className="font-semibold">
                                 <Link to="/dashboard/addReview">Add a review</Link>
                             </li>
-                            <li className="font-semibold">
-                                <Link to="/dashboard/users">All Users</Link>
-                            </li>
                         </ul>
                     }
 

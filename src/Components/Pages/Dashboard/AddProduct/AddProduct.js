@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 const AddProduct = () => {
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const imageStorageApiKey = '1391f873a11301e1b864913d536e7208';
 
@@ -51,6 +51,7 @@ const AddProduct = () => {
                         })
                 }
             })
+        reset();
     }
 
     return (

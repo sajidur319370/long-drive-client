@@ -47,6 +47,9 @@ const PurchaseModal = ({ purchaseTool, setPurchaseTool }) => {
             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
+                    <div className="modal-action">
+                        <label htmlFor="my-modal-6" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    </div>
                     <h2 className="font-bold text-xl text-blue-600">{name}</h2>
                     <h3 className="font-bold text-base text-red-900">Price:{price}</h3>
                     <h3 className="font-bold text-base text-lime-700">
@@ -196,11 +199,7 @@ const PurchaseModal = ({ purchaseTool, setPurchaseTool }) => {
                             value="Order"
                         />
                     </form>
-                    <div className="modal-action">
-                        <label htmlFor="my-modal-6" className="btn btn-error">
-                            cancel
-                        </label>
-                    </div>
+
                 </div>
             </div>
         </div>

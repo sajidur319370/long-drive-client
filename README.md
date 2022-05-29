@@ -1,6 +1,6 @@
 # Getting Started with Long-Drive
 
-#### `Site-link`: https://long-drive-c3e7e.firebaseapp.com/
+###### `Site-link`: https://long-drive-c3e7e.firebaseapp.com/
 
 ### In the project directory,I have used:
 
@@ -17,3 +17,19 @@
 ### `react-router-dom`
 
 ### `react-toastify`
+
+### `jsonwebtoken for sucerity`
+
+# `For Backend:`
+
+### `Node`
+
+### `mongodb`
+
+### `Express`
+
+### `cors`
+
+### `react stripe for payment`
+
+### `dotenv`

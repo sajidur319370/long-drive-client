@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ProfileInfo = ({ profile, setUpdatingProfile }) => {
-
     return (
         <div className="card bg-base-100 shadow-xl">
             <div className="card-body font-bold text-emerald-600">

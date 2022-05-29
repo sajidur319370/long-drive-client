@@ -39,11 +39,11 @@ function App() {
           <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="addReview" element={<AddReview></AddReview>}></Route>
-          <Route path="users" element={<Users></Users>}></Route>
           {/* ======================Admin page=========================== */}
           <Route path="manageProduct" element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
           <Route path="addProduct" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
           <Route path="manageOrders" element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>}></Route>
+          <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
         </Route>
         <Route path="/purchase/:id" element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>

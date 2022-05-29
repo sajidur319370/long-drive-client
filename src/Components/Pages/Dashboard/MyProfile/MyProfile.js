@@ -10,11 +10,13 @@ import ProfileUpdateModal from './ProfileUpdateModal';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     const [updtingProfile, setUpdatingProfile] = useState(null);
-    const { data: profile, isLaoding, refetch } = useQuery(['profile', user], () => fetch(`http://localhost:5000/profile/${user?.email}`, {
+    const { data: profile, isLaoding, refetch } = useQuery("profile", () => fetch(`http://localhost:5000/profile/${user?.email}`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
+
+
     if (isLaoding) {
         <Loading></Loading>
     }
@@ -37,7 +39,7 @@ const MyProfile = () => {
                     <ProfileInfo profile={profile} setUpdatingProfile={setUpdatingProfile}></ProfileInfo>
                 }
 
-                {updtingProfile && <ProfileUpdateModal updtingProfile={updateProfile} setUpdatingProfile={setUpdatingProfile} refetch={refetch}></ProfileUpdateModal>}
+                {updtingProfile && <ProfileUpdateModal updtingProfile={updateProfile} setUpdatingProfile={setUpdatingProfile} refetch={refetch} ></ProfileUpdateModal>}
             </div>
 
         </div>

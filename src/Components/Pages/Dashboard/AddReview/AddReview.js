@@ -7,7 +7,7 @@ import auth from '../../../../firebase.init';
 
 const AddReview = () => {
     const [user] = useAuthState(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const onSubmit = async data => {
         const reviewText = {
             comment: data.review,
@@ -28,8 +28,13 @@ const AddReview = () => {
                 if (comment.insertedId) {
                     toast.success("Comment is posted!!")
                 }
+
             })
+        reset();
+
     }
+
+
 
     return (
         <div >
